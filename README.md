@@ -1,4 +1,5 @@
 Cake Website Project 
+
 For this project, I designed and developed a custom cake ordering website for a client. The goal was to create a visually appealing and user-friendly platform that allows customers to seamlessly order personalized cakes while showcasing the bakery’s creations.
 
 Key Features & Enhancements:
