@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Gallery - Luna's Bakery</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="/images/small-logo.png" type="image/png" />
+
+    <!-- Montserrat font -->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- EP GARMOND font -->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Dancing script font -->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="images/x-icon.png" type="image/png" />
+  </head>
+
+  <body>
+    <header>
+      <!--  -->
+      <div class="flex-row header-cont">
+        <a href="index.html"><img class="logo" src="images/logo.png" /></a>
+        <nav class="navbar">
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+          <button class="btn btn-transp btn--open-popup">Order a cake</button>
+        </nav>
+      </div>
+
+      <div class="menu-mobile">
+        <a href="index.html"><img class="logo" src="images/logo.png" /></a>
+        <nav>
+          <i class="fa-solid fa-bars hamburger-icon"></i>
+        </nav>
+        <div class="off-screen-menu">
+          <span id="arrow-close-menu"
+            >Close<i class="fa-solid fa-chevron-right"></i
+          ></span>
+          <img class="logo off-screen-logo" src="images/logo.png" />
+          <a href="gallery.html" class="off-screen-a">Gallery</a>
+          <a href="contact.html" class="off-screen-a">Contact</a>
+          <button class="btn btn-fade btn--open-popup btn--mobile-menu">
+            Order a cake
+          </button>
+          <ul class="off-screen-links">
+            <li class="off-screen-link">
+              <a href="https://www.instagram.com/lunaliciouss.bakes/"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </li>
+            <li></li>
+            <li class="off-screen-link">
+              <a href="https://www.tiktok.com/@lunaliciouss.bakes"
+                ><i class="fa-brands fa-tiktok"></i
+              ></a>
+            </li>
+            <li></li>
+            <li class="off-screen-link">
+              <a href="mailto:lunacino@icloud.com"
+                ><i class="fa-solid fa-envelope"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <!-- <button class="btn btn-transp btn--open-popup">Order a cake</button> -->
+      </div>
+    </header>
+
+    <main>
+      <!--- POPUP ------>
+      <div class="wrapper"></div>
+
+      <div class="popup">
+        <h2>Order your dream cake</h2>
+        <i id="x-close-popup" class="fa-solid fa-xmark"></i>
+        <form
+          action="https://api.web3forms.com/submit"
+          id="cakeOrderForm"
+          method="POST"
+          class="popup-form"
+        >
+          <!-- Web3Forms Required Fields -->
+          <input
+            type="hidden"
+            name="access_key"
+            value="dc5237e2-26c8-43d6-932b-83293b91dc45"
+          />
+          <input
+            type="hidden"
+            name="redirect"
+            value="https://web3forms.com/success"
+          />
+
+          <div class="upper-form-container">
+            <div class="form-container form-left">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+
+              <label for="phone">Phone number</label>
+              <input type="text" id="phone" name="phone" required />
+
+              <label for="pickup-date">Pick up date</label>
+              <input type="date" id="pickup-date" name="pickup-date" required />
+            </div>
+
+            <div class="form-container form-right">
+              <label for="cake-size">Pick your preferred cake size:</label>
+              <select id="cake-size" name="cake-size" required>
+                <option disabled selected value>-- select an option --</option>
+                <option value="small">Small (4-6 persons)</option>
+                <option value="medium">Medium (10-12 persons)</option>
+                <option value="big">Big (16-20 persons)</option>
+              </select>
+
+              <label for="cake-base">Choose your cake base:</label>
+              <select id="cake-base" name="cake-base" required>
+                <option disabled selected value>-- select an option --</option>
+                <option value="vanilla">Vanilla</option>
+                <option value="surprise-me">Surprise me</option>
+                <option value="red-velvet">Red velvet</option>
+                <option value="chocolate">Chocolate</option>
+              </select>
+
+              <label for="cake-filling">Choose your filling:</label>
+              <select id="cake-filling" name="cake-filling" required>
+                <option disabled selected value>-- select an option --</option>
+                <option value="surprise-me">Surprise me</option>
+                <option value="raspberry">Raspberry</option>
+                <option value="chocolate">Chocolate</option>
+                <option value="vanilla">Vanilla</option>
+                <option value="mango">Mango</option>
+                <option value="pistachio">Pistachio +5€</option>
+                <option value="lotus-cream">Lotus cream +5€</option>
+              </select>
+
+              <label for="lettering">Lettering</label>
+              <input
+                type="text"
+                id="lettering"
+                name="lettering"
+                placeholder="example: 'Happy Birthday!'"
+              />
+            </div>
+          </div>
+
+          <div class="down-form-container">
+            <div class="allergies">
+              <label for="allergies"
+                >Any allergies? Please state them here:</label
+              >
+
+              <textarea id="allergies" name="allergies" rows="5" cols="33">
+              </textarea>
+            </div>
+
+            <div class="message">
+              <label for="message">Any other questions? Write me here: </label>
+
+              <textarea id="message" name="message" rows="5" cols="33">
+              </textarea>
+            </div>
+          </div>
+          <input
+            class="btn-fade form-btn btn--open-popup"
+            type="submit"
+            value="order your cake"
+            id="submitBtn"
+          />
+        </form>
+      </div>
+
+      <section class="pink-bg data-sct">
+        <h1>Data Privacy</h1>
+        <div class="data-cont">
+          <p>
+            <b>1. Introduction</b><br />
+            Welcome to Luna's Bakery! We value your privacy and are committed to
+            protecting your personal data. This Privacy Policy explains how we
+            collect, use, and protect your information when you visit our
+            website lunasbakery.com.<br /><br />
+            <b>2. Information</b><br />
+            We Collect When you visit our website, place an order, or contact
+            us, we may collect the following information: Personal Information:
+            Name, email address, phone number, billing and shipping address.
+            Payment Information: Payment details are processed securely by our
+            payment provider. We do not store credit card details. Order
+            Information: Details about the cakes and other products you
+            purchase. Technical Data: IP address, browser type, and cookies for
+            website functionality and analytics.<br /><br />
+            <b>3. How We Use Your Information</b><br />
+            We use your information for the following purposes: To process and
+            deliver your cake orders. To respond to inquiries and customer
+            service requests. To improve our website and personalize your
+            experience. To send promotional offers if you opt-in. To comply with
+            legal obligations.<br /><br />
+            <b>4. Cookies and Tracking Technologies</b><br />
+            Our website uses cookies to enhance your browsing experience. These
+            cookies help us remember your preferences and improve site
+            performance. You can manage cookie settings in your browser.<br /><br />
+            <b> 5. Sharing Your Data</b><br />
+            We do not sell or trade your personal information. However, we may
+            share your data with: Delivery Services: To ship your order to the
+            correct address. Payment Providers: To securely process
+            transactions. Legal Authorities: If required by law.<br /><br />
+            <b>6. Data Security</b><br />
+            We implement security measures to protect your personal data from
+            unauthorized access, loss, or misuse. However, no online
+            transmission is 100% secure. <br /><br /><b>7. Your Rights </b
+            ><br />You have the right to: Request access to your personal data.
+            Correct or delete your data. Withdraw consent for marketing
+            communications.<br /><br />
+            <b>8. Contact Us</b><br />
+            If you have any questions about our privacy policy, please contact
+            us: 📧 Email: lunacino@icloud.com 📞 Phone: +49152821742
+            <br /><br /><b>9. Changes to This Policy</b><br />
+            We may update this Privacy Policy from time to time. Please review
+            this page for any changes. Last updated: 10.03.2025
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="custom-shape-divider-top-pink">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+      <img class="hidden footer-cake" src="images/side-cake.png" />
+
+      <div class="grid-row footer-cont">
+        <a href="index.html"
+          ><img class="footer-logo" src="images/logo.png" alt="logo"
+        /></a>
+        <div class="footer-item">
+          <p class="footer-label">Useful Links</p>
+          <nav>
+            <ul class="footer-links">
+              <li class="footer-link"><a href="gallery.html">Gallery</a></li>
+              <li></li>
+              <li class="footer-link"><a href="contact.html">Contact</a></li>
+              <li></li>
+              <li class="footer-link">
+                <a href="data-privacy.html">Data Privacy</a>
+              </li>
+              <li></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-item">
+          <p class="footer-label">Social media</p>
+          <ul class="footer-links">
+            <li class="footer-link">
+              <i class="fa-brands fa-instagram"></i
+              ><a href="https://www.instagram.com/lunaliciouss.bakes/"
+                >Instagram</a
+              >
+            </li>
+            <li></li>
+            <li class="footer-link">
+              <i class="fa-brands fa-tiktok"></i
+              ><a href="https://www.tiktok.com/@lunaliciouss.bakes">TikTok</a>
+            </li>
+            <li></li>
+            <li class="footer-link">
+              <i class="fa-solid fa-envelope"></i
+              ><a href="mailto:lunacino@icloud.com">Email</a>
+            </li>
+            <li></li>
+          </ul>
+        </div>
+        <div class="footer-item">
+          <p class="footer-label">Your dream cake</p>
+          <button class="btn btn-fade btn--open-popup">Order now</button>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+  <script src="script.js"></script>
+</html>

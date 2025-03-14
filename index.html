@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Luna's Bakery</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="images/small-logo.png" type="image/x-icon" />
+
+    <!-- Montserrat font -->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- EP GARMOND font -->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Dancing script font -->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+  </head>
+
+  <body>
+<header >
+<!--  -->
+  <div class=" flex-row header-cont">
+    <a href="index.html"><img class="logo" src="images/logo.png" /></a>
+    <nav class="navbar">
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <button class="btn btn-transp btn--open-popup">Order a cake</button>
+    </nav>
+
+  </div>
+
+    <div class="menu-mobile">
+      <a href="index.html"><img class="logo" src="images/logo.png" /></a>
+      <nav>
+      <i class="fa-solid fa-bars hamburger-icon"></i>
+    </nav>
+    <div class="off-screen-menu"> 
+      <span id="arrow-close-menu">Close<i class="fa-solid fa-chevron-right"></i></span>
+  
+        <img class="logo off-screen-logo" src="/images/logo.png" alt="Logo" >
+      
+      <a href="gallery.html" class="off-screen-a">Gallery</a>
+      <a href="contact.html" class="off-screen-a">Contact</a>
+      <button class="btn btn-fade btn--open-popup btn--mobile-menu">Order a cake</button>
+      <ul class="off-screen-links">
+        <li class="off-screen-link"><a href="https://www.instagram.com/lunaliciouss.bakes/"><i class="fa-brands fa-instagram"></i></a><li>
+        <li class="off-screen-link"><a href="https://www.tiktok.com/@lunaliciouss.bakes"><i class="fa-brands fa-tiktok"></i></a><li>
+          <li class="off-screen-link"><a href="mailto:lunacino@icloud.com"><i class="fa-solid fa-envelope"></i></a></li>
+         
+      </ul>
+    </div>
+      <!-- <button class="btn btn-transp btn--open-popup">Get in touch</button> -->
+    </div>
+  </header>
+
+    <main>
+
+    <!--- POPUP ------>
+    <div class="wrapper"></div>
+   
+    <div class="popup ">
+      <h2>Order your dream cake</h2>
+      <i id="x-close-popup" class="fa-solid fa-xmark"></i>
+      <form action="https://api.web3forms.com/submit" id="cakeOrderForm" method="POST" class="popup-form" >
+
+        <!-- Web3Forms Required Fields -->
+        <input type="hidden" name="access_key" value="dc5237e2-26c8-43d6-932b-83293b91dc45">
+        <input type="hidden" name="redirect" value="https://web3forms.com/success">
+ 
+ 
+       <div class="upper-form-container">
+     
+         <div class="form-container form-left">
+           <label for="name">Name</label>
+           <input type="text" id="name" name="name" required/>
+     
+           <label for="email">Email</label>    
+           <input type="email" id="email" name="email" required/>
+     
+           <label for="phone">Phone number</label>
+           <input type="text" id="phone" name="phone" required/>  
+     
+           <label for="pickup-date">Pick up date</label>
+           <input type="date" id="pickup-date" name="pickup-date" required/>
+         </div>
+     
+         <div class="form-container form-right">
+           <label for="cake-size">Pick your preferred cake size:</label>
+           <select id="cake-size" name="cake-size" required>
+             <option disabled selected value>-- select an option --</option>
+             <option value="small">Small (4-6 persons)</option>
+             <option value="medium">Medium (10-12 persons)</option>
+             <option value="big">Big (16-20 persons)</option>
+           </select>
+     
+           <label for="cake-base">Choose your cake base:</label>
+           <select id="cake-base" name="cake-base" required>
+             <option disabled selected value>-- select an option --</option>
+             <option value="vanilla">Vanilla</option>
+             <option value="surprise-me">Surprise me</option>
+             <option value="red-velvet">Red velvet</option>
+             <option value="chocolate">Chocolate</option>
+           </select>
+     
+           <label for="cake-filling">Choose your filling:</label>
+           <select id="cake-filling" name="cake-filling" required>
+             <option disabled selected value>-- select an option --</option>
+             <option value="surprise-me">Surprise me</option>
+             <option value="raspberry">Raspberry</option>
+             <option value="chocolate">Chocolate</option>
+             <option value="vanilla">Vanilla</option>
+             <option value="mango">Mango</option>
+             <option value="pistachio">Pistachio +5€</option>
+             <option value="lotus-cream">Lotus cream +5€</option>
+           </select>
+     
+           <label for="lettering">Lettering</label>
+           <input type="text" id="lettering" name="lettering" placeholder="example: 'Happy Birthday!'"/> 
+         </div>
+     
+       </div>
+     
+       <div class="down-form-container">   
+ 
+         <div class="allergies">
+                <label for="allergies">Any allergies? Please state them here:</label>
+        
+                <textarea id="allergies" name="allergies" rows="5" cols="33">
+                </textarea>
+        </div>
+        
+        <div class="message">
+              <label for="message">Any other questions? Write me here: </label>
+        
+              <textarea id="message" name="message" rows="5" cols="33">
+              </textarea>
+        </div>
+        </div>  
+        <input class="btn-fade form-btn btn--open-popup"  type="submit"  value="order your cake" id="submitBtn"/>
+        
+                </form>
+    </div>
+
+
+    <!-- ----- BANNER ------- -->
+
+    <section class="pink-bg">
+
+      <div class="flex-row  hero-cont">
+        <div class="hero-content">
+          <p class="text-welcome">Welcome to</p>
+          <h1>Luna's Bakery</h1>
+          <button class="btn btn-fade btn--open-popup">Order your dream cake</button>
+        </div>
+        <img src="images/banner-img.png">
+      </div>
+    </section>
+
+    <!-- ----- PRODUCTS ------- -->
+
+    <section class="white-bg">
+      <div class="custom-shape-divider-top-pink">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+    </div>
+      <div class="flex-column products-cont">
+        <h2>Our Products</h2>
+        <div class="grid-row  products-grid">
+          <div class="cake-type">
+            <img src="images/birthday-cake.png" />
+            <p class="label">Birthday cakes</p>
+          </div>
+          <div class="cake-type">
+            <img src="images/wedding-cake.png" />
+            <p class="label">Wedding cakes</p>
+          </div>
+          <div class="cake-type">
+            <img src="images/party-cake.png" />
+            <p class="label">Party cakes</p>
+          </div>
+          <div class="cake-type">
+            <img src="images/bento-cake.png" />
+            <p class="label">Bento cakes</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----- PROCESS ------- -->
+
+    <section class="pink-bg process-sct">
+      <div class="custom-shape-divider-top-white">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+    </div>
+      <img src="images/side-cake.png">
+      <div class="flex-column process-cont">
+        <h2>The process</h2>
+        
+
+        <div class="grid-row process-grid">
+          <div class="process-card">
+            <span class="circle-number">
+              <p class="number">1</p>
+            </span>
+            <h3>Cake Request</h3>
+            <p class="text-normal">Start your order by submitting a request through our easy-to-use form. Let us know your cake preferences, flavors, and special requests.</p>
+          </div>
+          <div class="process-card">
+            <span class="circle-number">
+              <p class="number">2</p>
+            </span>
+            <h3>Clear Details</h3>
+            <p class="text-normal">If any details are unclear, we will contact you to confirm everything—ensuring your cake is exactly as you envision it.</p>
+          </div>
+          <div class="process-card">
+            <span class="circle-number">
+              <p class="number">3</p>
+            </span>
+            <h3>Cake Preparation</h3>
+            <p class="text-normal">I personally craft your cake with care and precision, using only high-quality ingredients.</p>
+          </div>
+          <div class="process-card">
+            <span class="circle-number">
+              <p class="number">4</p>
+            </span>
+            <h3>Receive and Enjoy!</h3>
+            <p class="text-normal">Your cake is either delivered fresh to your doorstep or ready for pickup—just in time to enjoy!</p>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- ----- TESTIMONIALS ------- -->
+
+    <section class="pink-bg">
+      <div class="flex-column testimonials-cont">
+        <h2>What our customers share</h2>
+
+        <div class="grid-row container-full test-grid">
+          <div class="testimonial">
+            <p class="test-name">Aleksandar Aleksandrov</p>
+            <p class="text-test">"Luna’s cakes are nothing short of incredible. The flavors are rich, the texture is perfect, and you can tell every cake is made with skill and passion. Truly some of the best I’ve ever had."</p>
+            <img src="images/test-heart.png">
+          </div>
+          <div class="testimonial">
+            <p class="test-name">Teddy Steinbuch</p>
+            <p class="text-test">"Luna has a real talent for baking. Her cakes are flavorful, moist, and perfectly balanced—not too sweet, just right. You can tell she puts real care into every detail."</p>
+            <img src="images/test-heart.png">
+          </div>
+          <div class="testimonial">
+            <p class="test-name">Sophie Woop</p>
+            <p class="text-test">"I ordered a cake from Luna for a special event, and it exceeded all expectations. It was beautifully designed and tasted just as good as it looked. Everyone at the party was asking where it came from."</p>
+            <img src="images/test-heart.png">
+          </div>
+        </div>
+    </section>
+
+  <!-- ----- ABOUT ------- -->
+
+    <section class="white-bg">
+      <div class="custom-shape-divider-top-pink">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+    </div>
+      <div class="flex-row  about-cont">
+        <img src="images/about-cake.png">
+        <div class="about-content">
+          <h2>About me</h2>
+          <p class="text-normal">Hi, I’m Luna! ✨ Ever since I was little, I’ve been obsessed with all things sweet—starting with sneaking tastes of cake batter in my grandma’s kitchen. What began as a childhood curiosity turned into a full-blown passion for baking, where every cake I create is a little piece of my heart (and a lot of buttercream!). Now, I spend my days whipping up dreamy desserts, turning sugar and flour into pure magic!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----- BENEFITS ------- -->
+
+    <section class="pink-bg">
+      <div class="custom-shape-divider-top-white">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+    </div>
+      <div class="flex-column container-full benefit-cont">
+        
+        <h2>Why choose Luna's Bakery</h1>
+        <div class="grid-row container-full benefit-grid">
+
+          <div class="benefit-card">
+            <img src="images/star-emoji.png">
+            <h3 class="benefit-label">High-quality ingredients</h3>
+            <p class="text-normal">We use only the finest ingredients for a delicious and fresh taste.</p>
+          </div>
+          <div class="benefit-card">
+            <img src="images/face-emoji.png">
+            <h3>100% Customer satisfaction</h3>
+            <p class="text-normal">Our goal is to exceed your expectations with every cake.</p>
+          </div>
+          <div class="benefit-card">
+            <img src="images/heart-emoji.png">
+            <h3>Beautiful & Professional vision</h3>
+            <p class="text-normal">Expertly designed cakes that look as good as they taste.</p>
+          </div>
+          <div class="benefit-card">
+            <img src="images/cake-emoji.png">
+            <h3>Amazing variety of cakes</h3>
+            <p class="text-normal">From classic flavors to unique creations—something for everyone!</p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer >
+    <div class="custom-shape-divider-top-pink">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+      </svg>
+  </div>
+  <img class="hidden footer-cake" src="images/side-cake.png">
+
+    <div class="grid-row footer-cont">
+   
+    <a href="index.html"><img class="footer-logo" src="images/logo.png" alt="logo"></a>
+    <div class="footer-item">
+      <p class="footer-label">Useful Links</p>
+      <nav>
+        <ul class="footer-links">
+        <li class="footer-link"><a href="gallery.html">Gallery</a><li>
+        <li class="footer-link"><a href="contact.html">Contact</a><li>
+        <li class="footer-link"><a href="data-privacy.html">Data Privacy</a><li>
+      </ul>
+      </nav>
+    </div>
+    <div class="footer-item">
+      <p class="footer-label">Social media</p>
+      <ul class="footer-links">
+        <li class="footer-link"><i class="fa-brands fa-instagram"></i><a href="https://www.instagram.com/lunaliciouss.bakes/">Instagram</a><li>
+        <li class="footer-link"><i class="fa-brands fa-tiktok"></i><a href="https://www.tiktok.com/@lunaliciouss.bakes">TikTok</a><li>
+        <li class="footer-link"><i class="fa-solid fa-envelope"></i><a href="mailto:lunacino@icloud.com">Email</a><li></li>
+         
+      </ul>
+    </div>
+    <div class="footer-item">
+      <p class="footer-label">Your dream cake</p>
+      <button class="btn btn-fade btn--open-popup">Order now</button>
+    </div>
+  </div>
+  </footer>
+
+  </body>
+
+  <script src="script.js"></script>
+</html>
